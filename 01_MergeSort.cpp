@@ -11,7 +11,7 @@ void merge(int* arr, int s, int e){
     int *right= new int[len2];
 
     //copy values 
-    int k=s; //s is the starting index se left wale array ki values copy kr de 
+    int k=s; //s is the starting index se left wale array ki values copy kr de (orignal array per pointer hai k )
 
     for(int i=0; i<len1 ;i++){
         left[i]= arr[k];
