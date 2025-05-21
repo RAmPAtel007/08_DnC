@@ -25,16 +25,32 @@ bool isSafe(int row, int col, vector<vector<char>> board,int n){
         j--;
     }
 
-    //upper diagonal k liye 
-    int i= row;
-    int j= col;
-    while(j>=0){
+    //upper left diagonal k liye 
+     i= row;
+     j= col;
+    while(i>=0 && j>=0){
         if(board[i][j]=='Q'){
             return false;
         }
         i--;
         j--;
     }
+
+    //bottom left diagonal 
+    i= row;
+    j= col;
+    while(i<n && j>=0){
+        if(board[i][j]=='Q'){
+            return false;
+        }
+        i++;
+        j--;
+    }
+    //kahin pr bhi queen nahi mili 
+    //iska mtlb yeah position safe hai bhaiya 
+    //toh return trueee kr do bhaiya 
+    return true;
+
 }
 
 void solve(vector<vector<char>>& board, int col, int n){
@@ -60,12 +76,12 @@ void solve(vector<vector<char>>& board, int col, int n){
 }
 
 int main(){
-    int n=4 ;
+    int n=5 ;
     vector<vector<char>> board(n,vector<char>(n,'-'));
     int col=0;
     //Q -> queen at the cell
     //- -> empty cell
     solve(board,col,n);
+    return 0;
 
-    
 }
