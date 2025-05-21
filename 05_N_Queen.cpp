@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-void printSoln(vector<vector<char>> board, int n){
+void printSoln(vector<vector<char>>& board, int n){
     for(int i=0; i<n; i++){
         for(int j=0;j<n;j++ ){
             cout<<board[i][j]<<" ";
@@ -12,7 +12,7 @@ void printSoln(vector<vector<char>> board, int n){
     cout<<endl<<endl;
 }
 
-bool isSafe(int row, int col, vector<vector<char>> board,int n){
+bool isSafe(int row, int col, vector<vector<char>> &board,int n){
     int i= row;
     int j= col;
     //check krna hai , ki kya main current cell[row][col] pr Queen ko rakh skta hua ya nahi
