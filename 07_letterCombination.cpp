@@ -7,13 +7,14 @@ public:
             return ;
         }
         //1 case mera 
-        int digit = digits[index]-'0'; //string to integer coversion 
+        int digit = digits[index]-'0'; //string or character to integer coversion 
         string value = mapping[digit]; // jo bhi value assigned hai us number pr 
         for(int i=0 ; i<value.length(); i++){
             char ch =value[i]; //charcter mel gaya ab esko include krna hai 
             output.push_back(ch);
             //re 
-            solve(mapping,output,digits,ans ,index+1);
+            solve(mapping,output,digits,ans ,index+1); //agar pop_back nahi krna hai toh output mein +ch kr denge 
+           // and comment the line 14 and 19 both here output wale dibbe mein koi change nahi aaya hai bs 2 value pass kr de hai fxn k ander 
             //backtrack 
             output.pop_back();
 
