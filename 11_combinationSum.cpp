@@ -22,7 +22,7 @@ public:
         vector<vector<int>>ans;
         vector<int> v; //current vector 
         solve(candidates, target,ans,v,0);
-        return ans;
+        return ans ;
 
     }
 };
